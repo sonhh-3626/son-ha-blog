@@ -1,0 +1,20 @@
+<!--
+  The Side Panel
+-->
+
+<aside id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+  <div class="access">
+    {% include update-list.html %}
+    {% include trending-tags.html %}
+  </div>
+
+  {% if page.toc %}
+    <div id="toc-column" class="ps-0 ps-lg-4 m-0">
+      {% include toc.html %}
+    </div>
+  {% endif %}
+
+  {% for include_file in layout.panel_includes %}
+    {% include {{ include_file | append: '.html' }} %}
+  {% endfor %}
+</aside>
